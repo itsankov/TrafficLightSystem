@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Car View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CarViewController" id="BYZ-38-t0r" customClass="CarViewController" customModule="TrafficLightSystem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFA-nb-ydZ">
+                                <rect key="frame" x="127.5" y="632" width="120" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start Driving"/>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nMS-fH-5dt"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juy-8c-5CL">
+                                <rect key="frame" x="67.5" y="279.5" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.9439066665972049" green="0.96841150522232056" blue="0.31569262820061184" alpha="0.27715773809523808" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="02R-L3-tMR"/>
+                                    <constraint firstAttribute="width" constant="240" id="Fn7-fF-dbF"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set car model:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmn-7w-hO2">
+                                <rect key="frame" x="67.5" y="253" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Juy-8c-5CL" firstAttribute="top" secondItem="Bmn-7w-hO2" secondAttribute="bottom" constant="5.6666666666666856" id="4hQ-Al-n9t"/>
+                            <constraint firstItem="Juy-8c-5CL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Gr1-4C-kS2"/>
+                            <constraint firstItem="RFA-nb-ydZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eV4-Ju-qAu"/>
+                            <constraint firstItem="RFA-nb-ydZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jhZ-tf-w7g"/>
+                            <constraint firstItem="Bmn-7w-hO2" firstAttribute="centerX" secondItem="Juy-8c-5CL" secondAttribute="centerX" id="m1L-2v-Wv6"/>
+                            <constraint firstItem="Juy-8c-5CL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nbJ-V1-b7B"/>
+                            <constraint firstItem="Bmn-7w-hO2" firstAttribute="leading" secondItem="Juy-8c-5CL" secondAttribute="leading" id="xyO-Uz-dI4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="carModelTextView" destination="Juy-8c-5CL" id="6nh-76-Jqt"/>
+                        <outlet property="startButton" destination="RFA-nb-ydZ" id="pDc-t9-fxu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="-2"/>
+        </scene>
+        <!--Traffic Light View Controller-->
+        <scene sceneID="mFx-VJ-XeP">
+            <objects>
+                <viewController storyboardIdentifier="TrafficLightViewController" id="mLw-9C-dna" customClass="TrafficLightViewController" customModule="TrafficLightSystem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M0x-a7-oGM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="wF0-sa-K9C">
+                                <rect key="frame" x="162" y="20" width="51.5" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="180" id="3mP-5o-yji"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzq-DB-9tG" customClass="TrafficLightView" customModule="TrafficLightSystem" customModuleProvider="target">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Pry-Bs-xgg">
+                                        <rect key="frame" x="96.5" y="50.5" width="150" height="502"/>
+                                        <subviews>
+                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ft2-xa-gwz">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="Lg8-PL-FXs"/>
+                                                    <constraint firstAttribute="width" constant="150" id="c1H-7M-f9p"/>
+                                                </constraints>
+                                            </view>
+                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xo7-bX-tVL">
+                                                <rect key="frame" x="0.0" y="176" width="150" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="491-nb-h9P"/>
+                                                    <constraint firstAttribute="width" constant="150" id="Rq3-d9-HvA"/>
+                                                </constraints>
+                                            </view>
+                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gS3-Sb-cYg">
+                                                <rect key="frame" x="0.0" y="352" width="150" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="8wA-hG-5w3"/>
+                                                    <constraint firstAttribute="width" constant="150" id="V7q-Ou-jCB"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Pry-Bs-xgg" firstAttribute="centerY" secondItem="yzq-DB-9tG" secondAttribute="centerY" id="IWp-bc-5Qc"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="520" id="Kvy-0k-ZjT"/>
+                                    <constraint firstItem="Pry-Bs-xgg" firstAttribute="centerX" secondItem="yzq-DB-9tG" secondAttribute="centerX" id="T0J-Yo-sQk"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="green" destination="gS3-Sb-cYg" id="sI3-D8-sAp"/>
+                                    <outlet property="red" destination="Ft2-xa-gwz" id="R5v-RJ-4FT"/>
+                                    <outlet property="yellow" destination="xo7-bX-tVL" id="Iyc-hA-c05"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jvy-gx-aCw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yzq-DB-9tG" firstAttribute="leading" secondItem="Jvy-gx-aCw" secondAttribute="leading" constant="16" id="6qI-hY-MS3"/>
+                            <constraint firstItem="yzq-DB-9tG" firstAttribute="leading" secondItem="Jvy-gx-aCw" secondAttribute="leading" constant="16" id="AaO-18-p0k"/>
+                            <constraint firstItem="yzq-DB-9tG" firstAttribute="bottom" secondItem="Jvy-gx-aCw" secondAttribute="bottom" id="BHu-na-fHw"/>
+                            <constraint firstItem="yzq-DB-9tG" firstAttribute="top" secondItem="wF0-sa-K9C" secondAttribute="bottom" constant="20" id="Bi4-Cb-y6p"/>
+                            <constraint firstItem="wF0-sa-K9C" firstAttribute="centerX" secondItem="Jvy-gx-aCw" secondAttribute="centerX" id="D49-dE-PY1"/>
+                            <constraint firstItem="yzq-DB-9tG" firstAttribute="bottom" secondItem="Jvy-gx-aCw" secondAttribute="bottom" id="Ryo-2g-qen"/>
+                            <constraint firstItem="Jvy-gx-aCw" firstAttribute="trailing" secondItem="yzq-DB-9tG" secondAttribute="trailing" constant="16" id="Uyu-wn-8SL"/>
+                            <constraint firstItem="wF0-sa-K9C" firstAttribute="top" secondItem="Jvy-gx-aCw" secondAttribute="top" id="WtA-bh-iqt"/>
+                            <constraint firstItem="Jvy-gx-aCw" firstAttribute="trailing" secondItem="yzq-DB-9tG" secondAttribute="trailing" constant="16" id="qF0-2L-7TP"/>
+                            <constraint firstItem="yzq-DB-9tG" firstAttribute="top" secondItem="wF0-sa-K9C" secondAttribute="bottom" constant="20" id="qF9-gz-Zc1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="carModelLabel" destination="wF0-sa-K9C" id="2Hv-jn-esP"/>
+                        <outlet property="trafficLightView" destination="yzq-DB-9tG" id="jbV-0G-YHO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pqj-0F-mSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101.5999999999999" y="-25.637181409295355"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
